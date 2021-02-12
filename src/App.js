@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-function App() {
+import Spinner from "./components/modules/spinner/Spinner";
+
+import FetchState from "./context/fetch/FetchState";
+import AlertState from "./context/alert/AlertState";
+
+import Search from "./components/pages/Search";
+
+const ListMovie = lazy(() => import("./components/pages/ListMovie"));
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <FetchState>
+          <AlertState>
+            <Search />
+            <Suspense fallback={<Spinner />}>
+              <Switch>
+                <Route path="/listMovies" component={ListMovie} />
+              </Switch>
+            </Suspense>
+          </AlertState>
+        </FetchState>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
