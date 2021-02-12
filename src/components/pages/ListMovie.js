@@ -10,6 +10,7 @@ const ListMovie = () => {
     
     const fetchContext = useContext(FetchContext);
 
+
     return (     
             <div>{fetchContext.loading ? <div><Spinner /></div> : fetchContext.movies.map(element => {
                 return (

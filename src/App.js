@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route, useLocation } from "react-router-dom";
 
 import Spinner from "./components/modules/spinner/Spinner";
 
@@ -9,23 +9,27 @@ import AlertState from "./context/alert/AlertState";
 import Search from "./components/pages/Search";
 
 const ListMovie = lazy(() => import("./components/pages/ListMovie"));
+const ModalDetailsMovie = lazy(() => import('./components/pages/ModalDetailsMovie'));
 
 const App = () => {
 
+  let location = useLocation();
+  let background = location.state && location.state.background;
   return (
     <div>
-      <Router>
-        <FetchState>
-          <AlertState>
-            <Search />
-            <Suspense fallback={<Spinner />}>
-              <Switch>
-                <Route path="/listMovies" component={ListMovie} />
-              </Switch>
-            </Suspense>
-          </AlertState>
-        </FetchState>
-      </Router>
+
+      <FetchState>
+        <AlertState>
+          <Search />
+          <Suspense fallback={<Spinner />}>
+            <Switch location={background || location}>
+
+              <Route path="/listMovies" component={ListMovie} />
+            </Switch >
+            {background && <Route path="/movie/:id" children={<ModalDetailsMovie />} />}
+          </Suspense>
+        </AlertState>
+      </FetchState>
     </div>
   );
 };
