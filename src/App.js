@@ -15,9 +15,9 @@ const App = () => {
 
   let location = useLocation();
   let background = location.state && location.state.background;
-  return (
-    <div>
 
+  return (
+    <>
       <FetchState>
         <AlertState>
           <Search />
@@ -30,7 +30,7 @@ const App = () => {
           </Suspense>
         </AlertState>
       </FetchState>
-    </div>
+    </>
   );
 };
 
