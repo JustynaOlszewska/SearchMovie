@@ -1,18 +1,13 @@
-import React, { lazy, Suspense, useContext, useEffect } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Switch, Route, useLocation } from "react-router-dom";
-
-import styled from 'styled-components';
-
 
 import Spinner from "./components/modules/spinner/Spinner";
 
 import FetchState from "./context/fetch/FetchState";
 import AlertState from "./context/alert/AlertState";
 
-const StyledApp = styled.div`
-width: 100%;
-overflow: hidden;
-`;
+import { StyledApp} from "./styles/styleComponents/StyledApp";
+
 const ModalDetailsMovie = lazy(() => import('./components/pages/ModalDetailsMovie'));
 const Main = lazy(() => import('./components/pages/Main'));
 

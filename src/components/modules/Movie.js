@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { StyledSection, StyledNavLink, StyledLazyLoadImage} from '../../styles/styleComponents/StyledMovie';
 
-import FetchContext from "../../context/fetch/fetchContext";
+import FetchContext from '../../context/fetch/fetchContext';
 
 const Movie = ({ movie }) => {
 
@@ -16,17 +16,17 @@ const Movie = ({ movie }) => {
 
     };
     return (
-        <section>
+        <StyledSection>
             <h1>{movie?.title}</h1>
-            <NavLink to={{
-                pathname: `/movie/${movie.id}`,
+            <StyledNavLink to={{
+                pathname: `/movie/${movie?.id}`,
                 state: { background: location }
             }} onClick={getId}>
-                <LazyLoadImage
-                    src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`}
-                    loading="lazy" alt={movie?.title} /></NavLink>
-            <p>{movie?.vote_average}</p>
-        </section>
+                <StyledLazyLoadImage
+                    src={`https://image.tmdb.org/t/p/w500${movie?.poster_path || movie?.backdrop_path}`}
+                    loading="lazy" alt={movie?.title} /></StyledNavLink>
+            <p>Rating users: {movie?.vote_average * 10}%</p>
+        </StyledSection>
     );
 };
 

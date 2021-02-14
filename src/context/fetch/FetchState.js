@@ -8,10 +8,10 @@ import axios from "axios";
 import { SEARCH_MOVIES, SET_LOADING, SET_TEXT, GET_MOVIE, GET_POPULARMOVIES } from "../types"
 
 const FetchState = props => {
+    
     const initialState = {
         movies: [],
         movie: null,
-        // popularMovies: null,
         popularMovie: null,
         loading: false,
         value: ''
