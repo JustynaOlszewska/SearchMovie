@@ -1,16 +1,17 @@
 import styled from 'styled-components';
 
 export const StylesModal = styled.div`
-  position: fixed;
+                position: fixed;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 width: 80%;
-                height: 80%;
-                background: rgba(0, 0, 0, 0.15);
+                height: 90%;
+                color: white;
+
                 & > div {
                     position: absolute;
-                    background: #fff;
+                    background-color: rgba(0,0,0, 0.8);
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
@@ -25,6 +26,12 @@ export const StylesModal = styled.div`
 export const StylesContainerData = styled.div`
  height: 50%;
   overflow: hidden;
+  &>h1,p{
+    margin-top: 0;
+  }
+  &>h4{
+    margin-bottom: 0;
+  }
   & > img {
     height: 100%;
      width: auto;

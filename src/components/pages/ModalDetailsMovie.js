@@ -22,15 +22,15 @@ const ModalDetailsMovie = () => {
     return (
         <StylesModal onClick={back}>
             {fetchContext.loading ? <div><Spinner /></div> :
-                <>
-                    <h1>Original title {fetchContext?.movie?.original_title}</h1>
-                    <p>overview{fetchContext?.movie?.overview}</p>
-                    <p>release date{fetchContext?.movie?.release_date}</p>
-                    <p>spoken_languages{fetchContext?.movie?.spoken_languages.map(language=> language?.english_name)}</p>
+                <StylesContainerData>
+                    <h1>Original title: "{fetchContext?.movie?.original_title}"</h1>
+                    <h4>Description:</h4> <p>{fetchContext?.movie?.overview}</p>
+                    <p>Release date: {fetchContext?.movie?.release_date}</p>
+                    <p>Spoken languages: {fetchContext?.movie?.spoken_languages.map(language => language?.english_name)}</p>
                     <button type="button" onClick={back}>
                         Close
           </button>
-                </>
+                </StylesContainerData>
             }
         </StylesModal>
     );
