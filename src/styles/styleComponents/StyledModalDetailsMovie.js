@@ -8,7 +8,6 @@ export const StylesModal = styled.div`
                 width: 80%;
                 height: 90%;
                 color: white;
-
                 & > div {
                     position: absolute;
                     background-color: rgba(0,0,0, 0.8);
@@ -20,12 +19,37 @@ export const StylesModal = styled.div`
                     text-align: center;
                     padding: 15px;
                     border: 2px solid #444;
-                };
+  @media (min-width: 230px) and (max-height: 320px){
+                      font-size: 0.6rem;
+                    }
+    
+  }
+  @media (min-width: 600px) and (orientation: portrait) {
+    font-size: 1.5rem;
+    
+  }
+  @media (min-width: 600px) and (orientation: landscape) {
+    font-size: 1.0rem;
+    
+  }
+  @media (min-width: 768px) and (orientation: portrait) {
+    font-size: 1.5rem;
+  }
+  @media (min-width: 768px) and (orientation: landscape){
+    font-size: 1.3rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 1.8rem;
+  }
+                
 `;
 
 export const StylesContainerData = styled.div`
- height: 50%;
+  height: 50%;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   &>h1,p{
     margin-top: 0;
   }
@@ -36,4 +60,15 @@ export const StylesContainerData = styled.div`
     height: 100%;
      width: auto;
   };
+  @media (min-width: 320px) and ( orientation: portrait) {
+    &>h1,p{
+    margin-bottom: 0;
+  }
+  }
+  @media (min-width: 530px) and ( orientation: landscape) {
+    &>h1,p{
+    margin-bottom: 0;
+  }
+  }
+  
 `;

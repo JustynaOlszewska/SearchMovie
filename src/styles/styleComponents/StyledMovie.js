@@ -15,7 +15,7 @@ width: 100%;
 `;
 export const StyledSection = styled.section`
 width: 80%;
-height: 500px;
+height: 550px;
 text-align: center;
 border: 2px solid white;
 margin: 10px 0;
@@ -25,13 +25,32 @@ justify-content: space-around;
 & > h1 {
     font-size: 1rem;
 }
+/* @media(min-width: 280px) and (orientation: portrait){
+    height: 500px;
+} */
 @media(min-width: 400px) {
     width: 45%;
+}
+@media(min-width: 411px) and (orientation: portrait){
+    height: 430px;
+}
+@media(min-width: 540px) and (orientation: portrait){
+    height: 550px;
+}
+@media(min-width: 720px) and (orientation: landscape){
+    height: 600px;
 }
 @media(min-width: 768px) {
     width: 25%;
     & > h1 {
     font-size: 1.2rem;
+}
+@media(min-width: 767px) and (orientation: portrait){
+    height: 480px;
+}
+
+@media(min-width: 811px) and (orientation: landscape) {
+    height: 500px;
 }
 }
 @media(min-width: 1024px) {
