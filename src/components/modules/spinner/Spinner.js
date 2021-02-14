@@ -1,11 +1,14 @@
 import React from 'react';
 
+import {StyledImg} from '../../../styles/styleComponents/StyledSpinner';
+
 import spinner from './spinner.gif';
+
 
 const Spinner = () => {
     return (
         <>
-            <img src={spinner} loading="lazy" alt="loading..." />
+            <StyledImg src={spinner} loading="lazy" alt="loading..." />
         </>
     );
 };
