@@ -1,15 +1,20 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useContext, useEffect } from 'react';
 import { Switch, Route, useLocation } from "react-router-dom";
+
+import styled from 'styled-components';
+
 
 import Spinner from "./components/modules/spinner/Spinner";
 
 import FetchState from "./context/fetch/FetchState";
 import AlertState from "./context/alert/AlertState";
 
-import Search from "./components/pages/Search";
-
-const ListMovie = lazy(() => import("./components/pages/ListMovie"));
+const StyledApp = styled.div`
+width: 100%;
+overflow: hidden;
+`;
 const ModalDetailsMovie = lazy(() => import('./components/pages/ModalDetailsMovie'));
+const Main = lazy(() => import('./components/pages/Main'));
 
 const App = () => {
 
@@ -17,20 +22,18 @@ const App = () => {
   let background = location.state && location.state.background;
 
   return (
-    <>
+    <StyledApp>
       <FetchState>
         <AlertState>
-          <Search />
           <Suspense fallback={<Spinner />}>
             <Switch location={background || location}>
-
-              <Route path="/listMovies" component={ListMovie} />
+              <Route path="/" component={Main} />
             </Switch >
             {background && <Route path="/movie/:id" children={<ModalDetailsMovie />} />}
           </Suspense>
         </AlertState>
       </FetchState>
-    </>
+    </StyledApp>
   );
 };
 
