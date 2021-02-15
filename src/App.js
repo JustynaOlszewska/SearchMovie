@@ -24,7 +24,8 @@ const App = () => {
           <Suspense fallback={<Spinner />}>
             <Switch location={background || location}>
               <Route exact path="/" component={Main} />
-              <Route path="/favorite" component={FavoriteMovies} />
+              <Route path="/searchMovie" component={Main} />
+              <Route exact path="/favorite" component={FavoriteMovies} />
 
             </Switch >
             {background && <Route path="/movie/:id" children={<ModalDetailsMovie />} />}
