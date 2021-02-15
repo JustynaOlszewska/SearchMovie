@@ -1,0 +1,2 @@
+(this.webpackJsonpmoviesearch=this.webpackJsonpmoviesearch||[]).push([[8],{141:function(e,t,c){"use strict";c.r(t);var i=c(0),o=c(29),n=c(1);t.default=function(){var e=Object(i.useContext)(o.a);return Object(i.useEffect)((function(){e.getFavoriteMovies()}),[]),Object(n.jsx)("section",{style:{color:"red"},children:e.favoriteMovie.map((function(e){return e.title}))})}}}]);
+//# sourceMappingURL=8.42059bf6.chunk.js.map
