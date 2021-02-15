@@ -16,16 +16,20 @@ const Search = () => {
     const classes = useStyles();
 
     useEffect(() => {
-        fetchContext.getPopularMovies()
+        if (fetchContext.value === '') fetchContext.getPopularMovies()
+        else if (fetchContext.value !== '') {
+            fetchContext.resetMovies()
 
-        fetchContext.searchMovies(fetchContext.value);
-
+            fetchContext.searchMovies(fetchContext.value, 1);
+        }
         // eslint-disable-next-line
     }, [fetchContext.value]);
 
     const handleChange = e => {
         history.push('/listMovies')
         fetchContext.setText(e.target.value);
+
+
     };
 
     return (

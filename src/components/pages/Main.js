@@ -4,6 +4,7 @@ import { StyledMain } from '../../styles/styleComponents/StyledMain';
 
 const Search = lazy(() => import('../organism/Search'));
 const ListMovie = lazy(() => import('../organism/ListMovie'));
+const MoreMovies = lazy(() => import('../organism/MoreMovies'));
 
 
 const Main = () => {
@@ -11,6 +12,7 @@ const Main = () => {
         <StyledMain>
             <Search />
             <ListMovie />
+            <MoreMovies/>
         </StyledMain>
     );
 }

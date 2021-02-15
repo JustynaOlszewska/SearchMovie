@@ -1,4 +1,4 @@
-import { SEARCH_MOVIES, SET_TEXT, GET_MOVIE, GET_POPULARMOVIES } from "../types";
+import { SEARCH_MOVIES, SET_TEXT, GET_MOVIE, GET_POPULARMOVIES, LOAD_MOREPAGES, RESET_MOVIES, ADD_FAVORITEMOVIE, FAVORITE_ERROR, GET_FAVORITEMOVIES } from "../types";
 
 const FetchReducer = (state, action) => {
     switch (action.type) {
@@ -6,27 +6,55 @@ const FetchReducer = (state, action) => {
         case SEARCH_MOVIES:
             return {
                 ...state,
-                movies: action.payload.results,
+                movies: [...state.movies, ...action.payload.results],
                 loading: false,
-                // popularMovies: null,
-
             }
+
         case GET_MOVIE:
             return {
                 ...state,
                 movie: action.payload,
                 loading: false,
             }
+
         case GET_POPULARMOVIES:
             return {
                 ...state,
                 movies: action.payload,
-                popularMovie: action.payload[0].backdrop_path
+                popularMovie: action.payload[0].backdrop_path,
             }
+        case GET_FAVORITEMOVIES:
+            return {
+                ...state,
+                favoriteMovie: action.payload
+            }
+        case ADD_FAVORITEMOVIE:
+            return {
+                ...state,
+                favoriteMovie: state.favoriteMovie.concat(action.payload)
+            }
+        case FAVORITE_ERROR:
+            return {
+                ...state,
+                error: action.payload
+            }
+        case RESET_MOVIES:
+            return {
+                ...state,
+                movies: []
+            }
+
+        case LOAD_MOREPAGES:
+            return {
+                ...state,
+                loadPages: state.loadPages + 1
+            }
+
         case SET_TEXT:
             return {
                 ...state,
-                value: action.payload
+                value: action.payload,
+                loadPages: 2
             }
 
         default:
