@@ -1,4 +1,5 @@
 import React, { lazy } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import { StyledMain } from '../../styles/styleComponents/StyledMain';
 
@@ -11,8 +12,9 @@ const Main = () => {
     return (
         <StyledMain>
             <Search />
+            <NavLink to='/favorite'>Go to your favorite movies</NavLink>
             <ListMovie />
-            <MoreMovies/>
+            <MoreMovies />
         </StyledMain>
     );
 }

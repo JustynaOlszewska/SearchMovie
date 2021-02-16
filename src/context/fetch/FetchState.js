@@ -82,10 +82,10 @@ const FetchState = props => {
                 payload: res.data
             });
         } catch (err) {
-            // dispatch({
-            //     type: FAVORITE_ERROR,
-            //     payload: err.response.statusText
-            // });
+            dispatch({
+                type: FAVORITE_ERROR,
+                payload: err.response.statusText
+            });
         }
     };
     const addFavoriteMovie = async (data) => {

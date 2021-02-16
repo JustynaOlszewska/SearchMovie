@@ -1,17 +1,23 @@
 import React, { useEffect, useContext } from 'react';
-import FetchContext from '../../context/fetch/fetchContext';
+import { NavLink } from 'react-router-dom';
+
+import FavoriteContext from '../../context/favorite/favoriteContext';
 
 const FavoriteMovies = () => {
 
-    const fetchContext = useContext(FetchContext);
+    const favoriteContext = useContext(FavoriteContext);
+
     useEffect(() => {
-        fetchContext.getFavoriteMovies()
+        favoriteContext.getFavoriteMovies()
         //eslint-disable-next-line
     }, [])
 
     return (
         <section style={{ color: 'red' }}>
-            {fetchContext.favoriteMovie.map(element => element.title)}
+            <ul>
+                {favoriteContext.favoriteMovie.map(movie => <li key={movie.title}>{movie.title}</li>)}
+            </ul>
+            <NavLink to='/'>Back</NavLink>
         </section>
     );
 }
