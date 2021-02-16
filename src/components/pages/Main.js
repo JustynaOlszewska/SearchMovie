@@ -1,7 +1,6 @@
 import React, { lazy } from 'react';
-import { NavLink } from 'react-router-dom';
 
-import { StyledMain } from '../../styles/styleComponents/StyledMain';
+import { StyledMain, StyledNavLink } from '../../styles/styleComponents/StyledMain';
 
 const Search = lazy(() => import('../organism/Search'));
 const ListMovie = lazy(() => import('../organism/ListMovie'));
@@ -12,7 +11,7 @@ const Main = () => {
     return (
         <StyledMain>
             <Search />
-            <NavLink to='/favorite'>Go to your favorite movies</NavLink>
+            <StyledNavLink to='/favorite'>Go to your favorite movies</StyledNavLink>
             <ListMovie />
             <MoreMovies />
         </StyledMain>

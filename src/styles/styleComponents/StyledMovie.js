@@ -25,9 +25,7 @@ justify-content: space-around;
 & > h1 {
     font-size: 1rem;
 }
-/* @media(min-width: 280px) and (orientation: portrait){
-    height: 500px;
-} */
+
 @media(min-width: 400px) {
     width: 45%;
 }

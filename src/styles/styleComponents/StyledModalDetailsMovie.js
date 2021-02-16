@@ -20,7 +20,7 @@ export const StylesModal = styled.div`
                     padding: 15px;
                     border: 2px solid #444;
   @media (min-width: 230px) and (max-height: 320px){
-                      font-size: 0.6rem;
+                      font-size: 0.5rem;
                     }
     
   }
@@ -72,3 +72,29 @@ export const StylesContainerData = styled.div`
   }
   
 `;
+
+export const StylesH3 = styled.h3`
+margin: 1px;
+& > i {
+    color: red;
+ font-size: 2rem;
+ @media(min-width: 600px ) {
+  /* font-size: 2.6rem; */
+  font-size: 1.2rem;
+
+ }
+ /* @media(min-width: 800px ) {
+  font-size: 3.5rem;
+ } */
+ @media(min-width: 1100px) {
+  font-size: 1.5rem;
+
+ }
+ @media(min-width: 1500px) {
+  font-size: 1.7rem;
+
+ }
+}
+
+`;
+

@@ -33,15 +33,14 @@ const FetchState = props => {
         }
     };
     const addFavoriteMovie = async (data) => {
-
         const config = {
             headers: {
                 'Content-Type': 'application/json'
             }
         };
-
         try {
-            const res = await axios.post('http://localhost:5000/favorite', data, config);
+
+            const res = await axios.post('http://localhost:5000/favorite', { title: data.title, id: data.id }, config);
             dispatch({
                 type: ADD_FAVORITEMOVIE,
                 payload: res.data

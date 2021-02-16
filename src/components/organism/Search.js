@@ -26,7 +26,7 @@ const Search = () => {
     }, [fetchContext.value]);
 
     const handleChange = e => {
-        history.push('/listMovies')
+        history.push('/')
         fetchContext.setText(e.target.value);
 
 

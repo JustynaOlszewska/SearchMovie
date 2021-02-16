@@ -1,10 +1,14 @@
 import React, { useEffect, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import { StyledSection, StyledOl } from '../../styles/styleComponents/StyledFavoriteMovies';
+
 import FavoriteContext from '../../context/favorite/favoriteContext';
+// import FetchContext from "../../context/fetch/fetchContext";
 
 const FavoriteMovies = () => {
 
+    // const fetchContext = useContext(FetchContext);
     const favoriteContext = useContext(FavoriteContext);
 
     useEffect(() => {
@@ -13,12 +17,13 @@ const FavoriteMovies = () => {
     }, [])
 
     return (
-        <section style={{ color: 'red' }}>
-            <ul>
-                {favoriteContext.favoriteMovie.map(movie => <li key={movie.title}>{movie.title}</li>)}
-            </ul>
-            <NavLink to='/'>Back</NavLink>
-        </section>
+        <StyledSection>
+            <h1>My favorite movies</h1>
+            <StyledOl>
+                {favoriteContext.favoriteMovie.map(movie => <li key={movie.id}>{movie.title}</li>)}
+            </StyledOl>
+            <NavLink to='/'>Go back</NavLink>
+        </StyledSection >
     );
 }
 
