@@ -1,0 +1,2 @@
+(this.webpackJsonpmoviesearch=this.webpackJsonpmoviesearch||[]).push([[6],{150:function(e,o,s){"use strict";s.r(o);var t=s(0),a=s(29),c=s(1);o.default=function(){var e=Object(t.useContext)(a.a);return Object(c.jsx)("button",{onClick:function(){e.loadMorePages(),e.searchMovies(e.value,e.loadPages)},children:"More movies"})}}}]);
+//# sourceMappingURL=6.55e0073a.chunk.js.map
