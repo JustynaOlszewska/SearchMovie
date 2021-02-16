@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/SearchMovie/static/js/main.63759710.chunk.js",
-    "main.js.map": "/SearchMovie/static/js/main.63759710.chunk.js.map",
-    "runtime-main.js": "/SearchMovie/static/js/runtime-main.9e29bf01.js",
-    "runtime-main.js.map": "/SearchMovie/static/js/runtime-main.9e29bf01.js.map",
+    "main.js": "/SearchMovie/static/js/main.022398ad.chunk.js",
+    "main.js.map": "/SearchMovie/static/js/main.022398ad.chunk.js.map",
+    "runtime-main.js": "/SearchMovie/static/js/runtime-main.7e0831e4.js",
+    "runtime-main.js.map": "/SearchMovie/static/js/runtime-main.7e0831e4.js.map",
     "static/js/2.ea876291.chunk.js": "/SearchMovie/static/js/2.ea876291.chunk.js",
     "static/js/2.ea876291.chunk.js.map": "/SearchMovie/static/js/2.ea876291.chunk.js.map",
     "static/js/3.b1892a67.chunk.js": "/SearchMovie/static/js/3.b1892a67.chunk.js",
     "static/js/3.b1892a67.chunk.js.map": "/SearchMovie/static/js/3.b1892a67.chunk.js.map",
-    "static/js/4.6c60256b.chunk.js": "/SearchMovie/static/js/4.6c60256b.chunk.js",
-    "static/js/4.6c60256b.chunk.js.map": "/SearchMovie/static/js/4.6c60256b.chunk.js.map",
+    "static/js/4.d6594454.chunk.js": "/SearchMovie/static/js/4.d6594454.chunk.js",
+    "static/js/4.d6594454.chunk.js.map": "/SearchMovie/static/js/4.d6594454.chunk.js.map",
     "static/js/5.421e300b.chunk.js": "/SearchMovie/static/js/5.421e300b.chunk.js",
     "static/js/5.421e300b.chunk.js.map": "/SearchMovie/static/js/5.421e300b.chunk.js.map",
     "static/js/6.86bf83e5.chunk.js": "/SearchMovie/static/js/6.86bf83e5.chunk.js",
@@ -31,8 +31,8 @@
     "static/js/3.b1892a67.chunk.js.LICENSE.txt": "/SearchMovie/static/js/3.b1892a67.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.9e29bf01.js",
+    "static/js/runtime-main.7e0831e4.js",
     "static/js/2.ea876291.chunk.js",
-    "static/js/main.63759710.chunk.js"
+    "static/js/main.022398ad.chunk.js"
   ]
 }
