@@ -1,5 +1,6 @@
 {
-  "favorite": [{
+  "favorite": [
+    {
       "id": "Sebastian",
       "title": "Eschweiler"
     },
@@ -20,6 +21,14 @@
       "title": "Wonder Woman 1984",
       "id": 464052,
       "name": "fas fa-star"
+    },
+    {
+      "title": "The Little Things",
+      "id": 602269
+    },
+    {
+      "title": "M. Butterfly",
+      "id": 1413
     }
   ]
 }

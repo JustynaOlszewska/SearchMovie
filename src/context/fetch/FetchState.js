@@ -46,7 +46,7 @@ const FetchState = props => {
         setLoading(true);
 
         const res = await axios.get(`
-        https://api.themoviedb.org/3/search/movie?query=${text}&page=${page}&api_key=53b639007e8194b06c05f0f35562dbb2`)
+        https://api.themoviedb.org/3/search/movie?query=${text}&page=${page}&api_key=${process.env.REACT_APP_MOVIESDB_CLIENT_ID}`)
 
         dispatch({
             type: SEARCH_MOVIES,
@@ -56,7 +56,7 @@ const FetchState = props => {
 
     const getMovie = async (id) => {
 
-        const res = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=53b639007e8194b06c05f0f35562dbb2&language=en-US
+        const res = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_MOVIESDB_CLIENT_ID}&language=en-US
         `);
 
         dispatch({
@@ -66,7 +66,7 @@ const FetchState = props => {
     };
 
     const getPopularMovies = async () => {
-        const res = await axios.get('https://api.themoviedb.org/3/movie/popular?api_key=53b639007e8194b06c05f0f35562dbb2&language=en-US&page=1')
+        const res = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_MOVIESDB_CLIENT_ID}&language=en-US&page=1`)
 
         dispatch({
             type: GET_POPULARMOVIES,
