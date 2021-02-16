@@ -1,10 +1,10 @@
 import React, { lazy, useContext } from 'react'
 import { useHistory, } from 'react-router-dom';
 
-import { StylesModal, StylesContainerData, StylesH3 } from "../../styles/styleComponents/StyledModalDetailsMovie";
+import { StylesModal, StylesContainerData, StylesH3 } from '../../styles/styleComponents/StyledModalDetailsMovie';
 
-import FetchContext from "../../context/fetch/fetchContext";
-import FavoriteContext from "../../context/favorite/favoriteContext";
+import FetchContext from '../../context/fetch/fetchContext';
+import FavoriteContext from '../../context/favorite/favoriteContext';
 
 const Spinner = lazy(() => import('../modules/spinner/Spinner'));
 
@@ -18,8 +18,8 @@ const ModalDetailsMovie = () => {
     let back = e => {
         e.stopPropagation();
         history.goBack();
-        // fetchContext.clearPhoto();
     };
+
     const handleClick = () => {
         favoriteContext.addFavoriteMovie(fetchContext.movie);
     };

@@ -5,9 +5,9 @@ import Spinner from "./components/modules/spinner/Spinner";
 
 import FetchState from "./context/fetch/FetchState";
 import FavoriteState from "./context/favorite/FavoriteState";
-import AlertState from "./context/alert/AlertState";
 
 import { StyledApp } from "./styles/styleComponents/StyledApp";
+
 
 const ModalDetailsMovie = lazy(() => import('./components/pages/ModalDetailsMovie'));
 const Main = lazy(() => import('./components/pages/Main'));
@@ -23,17 +23,15 @@ const App = () => {
     <StyledApp>
       <FetchState>
         <FavoriteState>
-          <AlertState>
-            <Suspense fallback={<Spinner />}>
-              <Switch location={background || location}>
-                <Route exact path="/" component={Main} />
-                <Route path="/searchMovie" component={Main} />
-                <Route path="/favorite" component={FavoriteMovies} />
-                <Route component={NotFound} />
-              </Switch >
-              {background && <Route path="/movie/:id" children={<ModalDetailsMovie />} />}
-            </Suspense>
-          </AlertState>
+          <Suspense fallback={<Spinner />}>
+            <Switch location={background || location}>
+              <Route exact path="/" component={Main} />
+              <Route path="/searchMovie" component={Main} />
+              <Route path="/favorite" component={FavoriteMovies} />
+              <Route component={NotFound} />
+            </Switch >
+            {background && <Route path="/movie/:id" children={<ModalDetailsMovie />} />}
+          </Suspense>
         </FavoriteState>
       </FetchState>
     </StyledApp>

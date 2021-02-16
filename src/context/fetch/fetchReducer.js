@@ -26,7 +26,8 @@ const FetchReducer = (state, action) => {
         case GET_FAVORITEMOVIES:
             return {
                 ...state,
-                favoriteMovie: action.payload
+                favoriteMovie: action.payload,
+                movie: null
             }
         case ADD_FAVORITEMOVIE:
             return {
@@ -54,7 +55,8 @@ const FetchReducer = (state, action) => {
             return {
                 ...state,
                 value: action.payload,
-                loadPages: 2
+                loadPages: 2,
+                movie: null
             }
 
         default:

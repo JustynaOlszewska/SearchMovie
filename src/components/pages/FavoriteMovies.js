@@ -4,11 +4,9 @@ import { NavLink } from 'react-router-dom';
 import { StyledSection, StyledOl } from '../../styles/styleComponents/StyledFavoriteMovies';
 
 import FavoriteContext from '../../context/favorite/favoriteContext';
-// import FetchContext from "../../context/fetch/fetchContext";
 
 const FavoriteMovies = () => {
 
-    // const fetchContext = useContext(FetchContext);
     const favoriteContext = useContext(FavoriteContext);
 
     useEffect(() => {
@@ -25,6 +23,6 @@ const FavoriteMovies = () => {
             <NavLink to='/'>Go back</NavLink>
         </StyledSection >
     );
-}
+};
 
 export default FavoriteMovies;

@@ -112,7 +112,7 @@ const FetchState = props => {
 
     const setLoading = () => dispatch({ type: SET_LOADING });
 
-    return <FetchContext.Provider value={{ error: state.error, favoriteMovie: state.favoriteMovie, loadPages: state.loadPages, popularMovie: state.popularMovie, popularMovies: state.popularMovies, movie: state.movie, value: state.value, movies: state.movies, loading: state.loading, searchMovies, setText, getMovie, getPopularMovies, loadMorePages, resetMovies, addFavoriteMovie, getFavoriteMovies }}> {props.children}</FetchContext.Provider>
+    return <FetchContext.Provider value={{ error: state.error, favoriteMovie: state.favoriteMovie, loadPages: state.loadPages, popularMovie: state.popularMovie, movie: state.movie, value: state.value, movies: state.movies, loading: state.loading, searchMovies, setText, getMovie, getPopularMovies, loadMorePages, resetMovies, addFavoriteMovie, getFavoriteMovies }}> {props.children}</FetchContext.Provider>
 };
 
 export default FetchState;

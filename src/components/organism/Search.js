@@ -6,30 +6,28 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 
 import FetchContext from "../../context/fetch/fetchContext";
 
-// const Alert = lazy(() => import('../organism/Alert'));
 import { useStyles, StyledHeader } from '../../styles/styleComponents/StyledSearch';
 
 const Search = () => {
 
     const history = useHistory()
     const fetchContext = useContext(FetchContext);
+
     const classes = useStyles();
 
     useEffect(() => {
+
         if (fetchContext.value === '') fetchContext.getPopularMovies()
         else if (fetchContext.value !== '') {
             fetchContext.resetMovies()
-
             fetchContext.searchMovies(fetchContext.value, 1);
-        }
+        };
         // eslint-disable-next-line
     }, [fetchContext.value]);
 
     const handleChange = e => {
         history.push('/')
         fetchContext.setText(e.target.value);
-
-
     };
 
     return (

@@ -28,7 +28,7 @@ const Movie = React.memo(({ movie }) => {
                 {movie?.poster_path ?
                     <StyledLazyLoadImage
                         src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`}
-                        loading="lazy" alt={movie?.title} /> : <i class="far fa-sad-tear"></i>}</StyledNavLink>
+                        loading="lazy" alt={movie?.title} /> : <i className="far fa-sad-tear"></i>}</StyledNavLink>
             <p>Rating users: {movie?.vote_average * 10}%</p>
         </StyledSection>
     );
