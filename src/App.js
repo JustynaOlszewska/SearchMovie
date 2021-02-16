@@ -12,6 +12,7 @@ import { StyledApp } from "./styles/styleComponents/StyledApp";
 const ModalDetailsMovie = lazy(() => import('./components/pages/ModalDetailsMovie'));
 const Main = lazy(() => import('./components/pages/Main'));
 const FavoriteMovies = lazy(() => import('./components/pages/FavoriteMovies'));
+const NotFound = lazy(() => import('./components/pages/NotFound'));
 
 const App = () => {
 
@@ -28,7 +29,7 @@ const App = () => {
                 <Route exact path="/" component={Main} />
                 <Route path="/searchMovie" component={Main} />
                 <Route path="/favorite" component={FavoriteMovies} />
-
+                <Route component={NotFound} />
               </Switch >
               {background && <Route path="/movie/:id" children={<ModalDetailsMovie />} />}
             </Suspense>
