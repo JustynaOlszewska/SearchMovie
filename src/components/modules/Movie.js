@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import PropTypes from 'prop-types';
+
 import { StyledSection, StyledNavLink, StyledLazyLoadImage } from '../../styles/styleComponents/StyledMovie';
 
 import FetchContext from '../../context/fetch/fetchContext';
 
-const Movie = ({ movie }) => {
+const Movie = React.memo(({ movie }) => {
 
     const fetchContext = useContext(FetchContext);
 
@@ -15,6 +17,7 @@ const Movie = ({ movie }) => {
         fetchContext.getMovie(movie.id)
 
     };
+
     return (
         <StyledSection>
             <h1>{movie?.title}</h1>
@@ -29,6 +32,9 @@ const Movie = ({ movie }) => {
             <p>Rating users: {movie?.vote_average * 10}%</p>
         </StyledSection>
     );
-};
+});
 
+Movie.propTypes = {
+    movie: PropTypes.object.isRequired,
+};
 export default Movie;

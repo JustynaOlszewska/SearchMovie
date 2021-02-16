@@ -8,7 +8,7 @@ import spinner from './spinner.gif';
 const Spinner = () => {
     return (
         <>
-            <StyledImg src={spinner} loading="lazy" alt="loading..." />
+            <StyledImg src={spinner} alt="loading..." />
         </>
     );
 };
