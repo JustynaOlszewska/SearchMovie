@@ -25,6 +25,10 @@ justify-content: space-around;
 & > h1 {
     font-size: 1rem;
 }
+& i {
+    font-size: 7rem;
+    color: white;
+}
 
 @media(min-width: 400px) {
     width: 45%;
