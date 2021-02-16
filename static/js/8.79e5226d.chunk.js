@@ -1,2 +1,0 @@
-(this.webpackJsonpmoviesearch=this.webpackJsonpmoviesearch||[]).push([[8],{142:function(e,t,c){"use strict";c.r(t);var i=c(0),s=c(21),n=c(39),r=c(1);t.default=function(){var e=Object(i.useContext)(n.a);return Object(i.useEffect)((function(){e.getFavoriteMovies()}),[]),Object(r.jsxs)("section",{style:{color:"red"},children:[Object(r.jsx)("ul",{children:e.favoriteMovie.map((function(e){return Object(r.jsx)("li",{children:e.title},e.title)}))}),Object(r.jsx)(s.b,{to:"/",children:"Back"})]})}}}]);
-//# sourceMappingURL=8.79e5226d.chunk.js.map
