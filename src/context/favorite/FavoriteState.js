@@ -19,7 +19,7 @@ const FetchState = props => {
 
     const getFavoriteMovies = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/favorite');
+            const res = await axios.get('/favorite');
 
             dispatch({
                 type: GET_FAVORITEMOVIES,
@@ -40,7 +40,7 @@ const FetchState = props => {
         };
         try {
 
-            const res = await axios.post('http://localhost:5000/favorite', { title: data.title, id: data.id }, config);
+            const res = await axios.post('/favorite', { title: data.title, id: data.id }, config);
             dispatch({
                 type: ADD_FAVORITEMOVIE,
                 payload: res.data
